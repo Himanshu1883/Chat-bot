@@ -9,11 +9,9 @@ const Chatbot = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
-  
-  // Get API key from environment variables
+
   const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
-  
-  // Scroll to bottom whenever messages change
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -93,7 +91,6 @@ const Chatbot = () => {
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
           <div className="card shadow-lg border-0" style={{ borderRadius: "16px", background: "#f8f9fa" }}>
-            {/* Header */}
             <div className="card-header d-flex align-items-center" style={{ 
               background: "linear-gradient(135deg, #4b6cb7 0%, #182848 100%)",
               borderRadius: "16px 16px 0 0",
@@ -118,8 +115,7 @@ const Chatbot = () => {
                 )}
               </div>
             </div>
-            
-            {/* Messages */}
+
             <div className="card-body" style={{ 
               height: "450px", 
               overflowY: "auto",
@@ -199,7 +195,7 @@ const Chatbot = () => {
               <div ref={messagesEndRef} />
             </div>
             
-            {/* Input */}
+
             <div className="card-footer bg-white" style={{ 
               borderTop: "1px solid rgba(0,0,0,0.05)",
               borderRadius: "0 0 16px 16px",
@@ -244,7 +240,6 @@ const Chatbot = () => {
             </div>
           </div>
           
-          {/* Add custom CSS for typing animation */}
           <style jsx>{`
             .typing-indicator {
               display: flex;
